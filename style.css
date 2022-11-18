@@ -2,12 +2,70 @@
   box-sizing: border-box;
 }
 
+/* typography */
+.name,
+.price .original {
+  font-family: 'Fraunces', serif
+}
+
+.category,
+.desc,
+.btn,
+.price .discounted,
+.attribution {
+  font-family: 'Montserrat', sans-serif
+}
+
+.name,
+.attribution a {
+  color: hsl(212, 21%, 14%);
+}
+
+.category,
+.desc,
+.price .discounted,
+.attribution {
+  color: hsl(228, 12%, 48%);
+}
+
+.price .original {
+  color: hsl(158, 36%, 37%);
+  font-size: 2rem;
+}
+.price .discounted {
+  font-size: .85rem;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.category {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .25rem;
+  text-transform: uppercase;
+}
+
+.desc {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5rem;
+}
+
+.attribution a {
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+
+/* layout */
 body {
   background-color: hsl(30, 38%, 92%);
   min-height: 100vh;
-
   margin: 0;
-  padding: 1rem;
+  padding: 2rem 1rem
 }
 
 .container {
@@ -19,48 +77,74 @@ body {
 
 .image-container img,
 .details {
+  width: 100%;
   max-width: 300px;
+}
+
+.details {
+  overflow: hidden;
 }
 
 .image-container img,
 picture {
-  width: 100%;
   display: block;
   border-radius: .7rem .7rem 0 0;
+}
+
+.name {
+  margin: .75rem 0;
 }
 
 .details {
   background-color: hsl(0, 0%, 100%);
   border-radius: 0 0 .7rem .7rem;
-  padding: 1rem;
+  padding: 1rem 1.3rem;
+}
+
+.price { 
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .btn {
+  cursor: pointer;
+  color: white;
+  font-size: .75rem;
+  font-weight: 600;
+  background-color: hsl(158, 36%, 37%);
+  border: none;
+  border-radius: .3rem;
   width: 100%;
+
+  padding: .5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0 .75rem;
 }
 
-img.desktop {
-  display: none;
+.btn:hover {
+  background-color: hsl(160, 40%, 20%);
+}
+
+.attribution {
+  margin-top: 3rem;
 }
 
 @media (min-width: 900px) {
-  img.desktop {
-    display: block;
-  }
-
   .container {
-    display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
   }
 
-  .image-container img,
   .details {
-    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1.6rem;
   }
 
   .image-container img {
@@ -69,11 +153,6 @@ img.desktop {
 
   .details {
     border-radius: 0 .7rem .7rem 0;
-  }
-  
-
-  img.mobile {
-    display: none;
   }
 }
 
